@@ -103,7 +103,7 @@ body {
     #category-aside {
         position: fixed;
 
-        top: 60px;
+        top: 125px;
 
         left: 0;
         height: calc(100vh - 60px);
@@ -129,7 +129,7 @@ body {
     }
 
     #toggle-sidebar {
-        top: 85px;
+        top: 140px;
 
         left: 0px;
 
@@ -283,7 +283,7 @@ body {
     background-color: var(--primary-color);
     color: var(--white-color);
     padding: 0.3rem;
-    z-index: 1000;
+    z-index: 899;
 }
 
 .footer p {
