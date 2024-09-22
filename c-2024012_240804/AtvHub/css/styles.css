@@ -283,7 +283,7 @@ body {
     background-color: var(--primary-color);
     color: var(--white-color);
     padding: 0.3rem;
-    z-index: 899;
+    z-index: 1000;
 }
 
 .footer p {
