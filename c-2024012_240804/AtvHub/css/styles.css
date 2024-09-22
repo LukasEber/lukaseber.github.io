@@ -102,15 +102,13 @@ body {
 @media (max-width: 767px) {
     #category-aside {
         position: fixed;
-
-        top: 125px;
-
+        margin-top: 0;
         left: 0;
-        height: calc(100vh - 60px);
+        top: 0;
+        height: 100%;
 
         width: 240px;
-        background-color: white;
-        z-index: 900;
+        z-index: 1001;
 
         transform: translateX(-240px);
 
@@ -129,9 +127,14 @@ body {
     }
 
     #toggle-sidebar {
-        top: 140px;
-
+        position: fixed;
+        top: 10px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        padding: 2px;
+        color: white;
         left: 0px;
+        z-index: 1002;
 
     }
 
@@ -377,6 +380,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .header {
+        position: relative;
+    }
     /* Suchleiste im zweiten Header wird sichtbar auf mobilen Geräten */
     .second-header {
         display: block !important;
