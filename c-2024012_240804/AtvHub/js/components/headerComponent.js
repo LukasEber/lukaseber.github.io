@@ -104,7 +104,7 @@ export class HeaderComponent {
         if (results.length > 0) {
             resultsContainer.innerHTML = results
                 .map(product => `<li class="p-2 hover:bg-gray-200 cursor-pointer">
-                                    <a href="/productDetail.html?id=${product.id}" class="block">${product.name}</a>
+                                    <a href="productDetail.html?id=${product.id}" class="block">${product.name}</a>
                                  </li>`)
                 .join('');
             resultsContainer.classList.remove('hidden');
