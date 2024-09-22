@@ -1,0 +1,200 @@
+html {
+    height: 100%;
+    margin: 20px;
+    align-content: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1000px;
+    margin: 10px; 
+}
+
+.logo {
+    position: relative;
+    width: 300px;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    height: 280px;
+}
+
+.logo img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.language-template {
+    z-index: 10;
+}
+
+.char-template {
+    z-index: 5;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.subtitle {
+    color: #777;
+    margin: 0;
+    padding: 10px 0 20px 0;
+    letter-spacing: normal;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.2;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.label {
+    width: 150px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.value {
+    flex: 1;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+.item {
+    padding: 5px;
+}
+
+.results .item:last-child {
+    grid-column: span 2;
+}
+
+.mb-20 {
+    margin-bottom: 40px;
+}
+
+.char-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.chars,
+.nums {
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+.char-item {
+    text-align: center;
+    margin: 0 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: #777;
+    margin: 5px 0;
+}
+
+.char {
+    font-size: 1.2em;
+    color: #000;
+}
+
+.number {
+    font-size: 1em;
+    color: #000;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        width: 80%;
+        height: 180px;
+    }
+
+    .results {
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        line-height: 1;
+
+    }
+
+    .item {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .column-stack {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .value {
+        width: auto;
+        margin-bottom: 5px;
+    }
+
+    .label {
+        margin-bottom: 5px;
+    }
+
+    .search-box input {
+        font-size: 0.9em;
+    }
+
+    .char {
+        font-size: 0.8em;
+    }
+
+    .number {
+        font-size: 0.8em;
+    }
+}

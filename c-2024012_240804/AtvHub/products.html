@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkte - ATV Quad Ersatzteile Shop</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <main class="w-full p-6 flex products-main">
+        <button id="toggle-sidebar" class="material-icons align-middle" style="display: none; margin-left: 0.4rem;">
+            menu
+        </button>
+
+        <aside id="category-aside" class="bg-gray-100 p-4 rounded shadow" style="display: none;">
+            <h3 class="text-xl font-semibold mb-2 mt-11">
+                <span class="material-icons align-middle">category</span>
+                Kategorien
+            </h3>
+            <ul id="category-list" class="space-y-2">
+            </ul>
+        </aside>
+
+        <section id="product-section" class="flex-grow ml-0 md:ml-0 transition-all duration-300"
+            style="display: none; margin-top: 20px;">
+            <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer p-4 text-center">
+        <p>© 2024 ATV Quad Ersatzteile Shop</p>
+        <p><a href="terms.html" class="footer-link mr-2">AGB</a> <a href="privacy.html"
+                class="footer-link">Datenschutz</a></p>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <p>Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzung zu ermöglichen. <a
+                href="privacy.html">Mehr erfahren</a></p>
+        <button id="accept-cookies" class="btn-primary success">Akzeptieren</button>
+    </div>
+
+    <script src="js/products.js" type="module" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleSidebarButton = document.getElementById('toggle-sidebar');
+            const categoryAside = document.getElementById('category-aside');
+            const productSection = document.getElementById('product-section');
+
+            toggleSidebarButton.style.display = 'block';
+
+            toggleSidebarButton.addEventListener('click', () => {
+                if (window.innerWidth <= 767) {
+                    categoryAside.classList.toggle('visible');
+                } else {
+                    categoryAside.classList.toggle('hidden');
+                    categoryAside.classList.toggle('visible'); 
+                    productSection.classList.toggle('expanded');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

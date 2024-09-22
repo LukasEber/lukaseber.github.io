@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Projekte - Übersicht</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 min-h-screen flex items-center justify-center">
+    <div class="container max-w-md mx-auto bg-white p-10 shadow-lg rounded-lg">
+        <h1 class="text-3xl font-extrabold text-center text-gray-800 mb-8">Meine Projekte</h1>
+
+        <ul id="projectList" class="space-y-4 mb-6"></ul>
+
+        <div id="passwordForm" class="password-container hidden">
+            <input type="password" id="password" class="border border-gray-300 p-3 w-full rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Passwort eingeben">
+            <input type="hidden" id="projectToLoad">
+            <input type="hidden" id="clientIdToLoad">
+            <button onclick="checkPassword()" class="w-full bg-blue-500 text-white py-3 rounded hover:bg-blue-600 transition duration-200 font-semibold shadow-md hover:shadow-lg">
+                Bestätigen
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>

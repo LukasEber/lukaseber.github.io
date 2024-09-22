@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb - ATV Quad Ersatzteile Shop</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+     <main class="main container mx-auto p-6">
+        <h2 class="text-2xl mb-4 font-semibold section-title">Ihr Warenkorb</h2>
+        <div id="cart-list" class="cart-list"></div>
+        <button id="checkout-btn" class="btn-primary success mt-4 hidden">Zur Kasse</button>
+    </main>
+    <footer class="footer p-4 text-center">
+        <p>© 2024 ATV Quad Ersatzteile Shop</p>
+        <p><a href="terms.html" class="footer-link">AGB</a> | <a href="privacy.html" class="footer-link">Datenschutz</a></p>
+    </footer>
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <p>Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzung zu ermöglichen. <a href="privacy.html">Mehr erfahren</a></p>
+        <button id="accept-cookies" class="btn-primary success">Akzeptieren</button>
+    </div>
+    <script src="js/cart.js" type="module" defer></script>
+</body>
+</html>

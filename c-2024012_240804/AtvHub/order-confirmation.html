@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banküberweisung Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/order-confirmation.js" type="module" defer></script>
+    <style>
+        .info-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .info-label {
+            font-weight: bold;
+        }
+
+        .info-value {
+            text-align: center;
+        }
+        #bank-info {
+            width: 100%;
+            max-width: 1000px; 
+            margin: 0 auto; 
+            text-align: left;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header id="header"></header>
+    <main class="container mx-auto p-4">
+        <div id="order-confirmation" class="hidden">
+            <div id="success-message" class="text-green-700 text-center text-xl font-bold mb-8 mt-8 hidden">
+                Vielen Dank für Ihre Bestellung! Bitte folgen Sie nun den Zahlungsinfos, damit wir Ihre Bestellung
+                bearbeiten können.
+            </div>
+            <div id="bank-info" class="mt-4 mb-6 border border-gray-300 rounded-lg p-6 bg-white shadow-md hidden">
+                <h1 class="text-2xl font-bold mb-4 text-center">Banküberweisung</h1>
+                <p class="text-gray-700 mb-4 text-center"><strong>Bitte überweisen Sie den Gesamtbetrag auf das folgende
+                        Konto:</strong></p>
+                <div class="info-row">
+                    <span class="info-label">Kontoinhaber:</span>
+                    <span class="info-value">ATV Hub DE</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Betrag:</span>
+                    <span class="info-value" id="order-amount"></span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">IBAN:</span>
+                    <span class="info-value">DE12345678901234567890</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">BIC:</span>
+                    <span class="info-value">DEUTDEFF</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Verwendungszweck:</span>
+                    <span class="info-value" id="bank-reference"></span>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-center">
+                <button onclick="window.location.href='products.html'"
+                    class="btn-primary default text-white px-4 py-2 rounded-lg shadow-md">
+                    Zurück zur Produktseite
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+:root {
+    --primary-color: #071216;
+    --accent-color: #a4856e;
+    --gray-color: #83888b;
+    --gray-color-light: #cccfd1;
+    --background-color: #f8f8f8;
+    --white-color: #ffffff;
+    --primary-shadow: rgba(7, 18, 22, 0.2);
+    --accent-shadow: rgba(164, 133, 110, 0.2);
+    --gray-shadow-light: #aaabac;
+    --gray-shadow-light-bg: #dfdfdf;
+    --gray-shadow: #6a6e70;
+    --primary-dark: #050c10;
+    --accent-dark: #8c7058;
+    --info-color: #007bff;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --info-dark: #0056b3;
+    --success-dark: #218838;
+    --danger-dark: #c82333;
+}
+
+.btn-primary {
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary.success {
+    background-color: var(--success-color);
+}
+
+.btn-primary.success:hover {
+    background-color: var(--success-dark);
+    box-shadow: 0 4px 8px var(--success-dark);
+}
+
+.btn-primary.danger {
+    background-color: var(--danger-color);
+}
+
+.btn-primary.danger:hover {
+    background-color: var(--danger-dark);
+    box-shadow: 0 4px 8px var(--danger-dark);
+}
+
+.btn-primary.info {
+    background-color: var(--info-color);
+}
+
+.btn-primary.info:hover {
+    background-color: var(--info-dark);
+    box-shadow: 0 4px 8px var(--info-dark);
+}
+
+.btn-primary.default {
+    background-color: var(--accent-color);
+}
+
+.btn-primary.default:hover {
+    background-color: var(--accent-dark);
+    box-shadow: 0 4px 8px var(--accent-shadow);
+}
+
+.btn-secondary {
+    background-color: var(--gray-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--gray-shadow);
+    box-shadow: 0 4px 8px var(--gray-shadow);
+}
+
+.btn-tertiary {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 1px solid var(--primary-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-tertiary:hover {
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px var(--primary-shadow);
+}

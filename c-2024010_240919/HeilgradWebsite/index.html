@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heilgrad.de</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="business.js"></script>
+    <script src="../../globalAuth.js" type="module" defer></script>
+
+</head>
+
+<body data-auth-protected="true">
+    <div class="container">
+        <div class="logo">
+            <img src="assets/icons/a1.png" alt="Logo" id="base-logo">
+
+            <img src="assets/icons/b1.png" alt="Arabisch" id="arabic-template" class="language-template"
+                style="display: none;">
+            <img src="assets/icons/b2.png" alt="Latein" id="latin-template" class="language-template"
+                style="display: none;">
+
+            <img src="assets/icons/c1.png" alt="Schablone 1" class="char-template" id="template-1"
+                style="display: none;">
+            <img src="assets/icons/c2.png" alt="Schablone 2" class="char-template" id="template-2"
+                style="display: none;">
+            <img src="assets/icons/c3.png" alt="Schablone 3" class="char-template" id="template-3"
+                style="display: none;">
+            <img src="assets/icons/c4.png" alt="Schablone 4" class="char-template" id="template-4"
+                style="display: none;">
+            <img src="assets/icons/c5.png" alt="Schablone 5" class="char-template" id="template-5"
+                style="display: none;">
+            <img src="assets/icons/c6.png" alt="Schablone 6" class="char-template" id="template-6"
+                style="display: none;">
+            <img src="assets/icons/c7.png" alt="Schablone 7" class="char-template" id="template-7"
+                style="display: none;">
+            <img src="assets/icons/c8.png" alt="Schablone 8" class="char-template" id="template-8"
+                style="display: none;">
+            <img src="assets/icons/c9.png" alt="Schablone 9" class="char-template" id="template-9"
+                style="display: none;">
+        </div>
+        <div class="content">
+            <p class="subtitle">Sprachdekodierung Latein & Arabisch</p>
+            <div class="search-box">
+                <input type="text" placeholder="Hier das Wort eingeben" id="search-input">
+            </div>
+            <div class="char-display" id="char-display"></div>
+            <div class="results" id="results" style="display: none;">
+                <div class="item">
+                    <div class="result-item"><span class="label">Grad:</span><span id="grad-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Masse:</span><span id="mass-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Summe:</span><span id="sum-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Segnung:</span><span id="segnung-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">10er Faktoren:</span><span id="decimalFactor-result"
+                            class="value"></span></div>
+                    <div class="result-item mb-20"><span class="label">Buchstaben:</span><span id="letterCount-result"
+                            class="value"></span></div>
+
+                    <div class="result-item"><span class="label">Oberhalb:</span><span id="oberhalb-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Unterhalb:</span><span id="unterhalb-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Links:</span><span id="links-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Rechts:</span><span id="rechts-result"
+                            class="value"></span></div>
+                </div>
+                <div class="item mb-20">
+                    <div class="result-item"><span class="label">Anzahl Q9:</span><span id="q9-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Anzahl Q8:</span><span id="q8-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Anzahl Q7:</span><span id="q7-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Anzahl Q6:</span><span id="q6-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Anzahl Q5:</span><span id="q5-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Anzahl Q4:</span><span id="q4-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Anzahl Q3:</span><span id="q3-result"
+                            class="value"></span></div>
+                    <div class="result-item"><span class="label">Anzahl Q2:</span><span id="q2-result"
+                            class="value"></span></div>
+                    <div class="result-item mb-20"><span class="label">Anzahl Q1:</span><span id="q1-result"
+                            class="value"></span></div>
+
+                    <div class="result-item"><span class="label">Teilbarkeit:</span><span id="divisibility-result"
+                            class="value"></span></div>
+                </div>
+                <div class="item">
+                    <div class="result-item column-stack"><span class="label">Addition:</span><span id="addition-result"
+                            class="value"></span></div>
+                    <div class="result-item column-stack"><span class="label">Subtraktion:</span><span
+                            id="subtraction-result" class="value"></span></div>
+                    <div class="result-item column-stack"><span class="label">Multiplikation:</span><span
+                            id="multiplication-result" class="value"></span></div>
+                    <div class="result-item column-stack"><span class="label">Division:</span><span id="division-result"
+                            class="value"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

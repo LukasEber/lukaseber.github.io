@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - ATV Quad Ersatzteile Shop</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/admin.js" type="module" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="no-scroll">
+    <div class="tab-bar" id="tab-bar">
+        <button id="tab-products" class="tab-button active">Produkte</button>
+        <button id="tab-orders" class="tab-button">Bestellungen</button>
+    </div>
+    <main class="flex flex-col items-center justify-center flex-grow min-h-screen admin-mobile-container">
+        <div id="admin-login" class="bg-white rounded centered-form">
+            <h2 class="text-2xl mb-4 font-semibold section-title">Admin Login</h2>
+            <input type="text" id="admin-username" class="border p-2 w-full mb-4" placeholder="Benutzername">
+            <input type="password" id="admin-password" class="border p-2 w-full mb-4" placeholder="Admin Key">
+            <button id="admin-login-button" class="btn-primary default w-full">Login</button>
+        </div>
+        <div id="admin-panel" class="hidden admin-panel">
+            <div id="products-tab" class="tab active align-top">
+                <div class="flex justify-between items-center mb-4 w-full admin-mobile-column">
+                    <h2 class="text-xl font-semibold section-title">Produkte verwalten</h2>
+                    <button id="open-add-product-dialog" class="btn-primary default">Produkt hinzufügen</button>
+                </div>
+                <ul id="admin-product-list" class="mt-4"></ul>
+            </div>
+            <div id="orders-tab" class="tab align-top">
+                <h2 class="text-xl mb-4 font-bold section-title">Bestellungen verwalten</h2>
+                <ul id="admin-order-list" class="mt-4"></ul>
+            </div>
+        </div>
+    </main>
+    <footer class="footer p-4 text-center">
+        <p>© 2024 ATV Quad Ersatzteile Shop</p>
+        <p><a href="terms.html" class="footer-link mr-2">AGB</a> <a href="privacy.html"
+                class="footer-link">Datenschutz</a></p>
+    </footer>
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <p>Diese Website verwendet Cookies, um Ihnen die bestmögliche Nutzung zu ermöglichen. <a
+                href="privacy.html">Mehr erfahren</a></p>
+        <button id="accept-cookies" class="btn-primary success">Akzeptieren</button>
+    </div>
+
+    <div id="add-product-dialog" class="dialog-overlay hidden">
+        <div class="dialog">
+            <div class="dialog-header">
+                <span id="dialog-add-product-header">Produkt hinzufügen</span>
+                <button id="close-add-product-dialog" class="delete-button" style="float: right;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="dialog-body">
+                <input type="text" id="dialog-product-name" class="border p-2 w-full mb-4" placeholder="Produktname"
+                    maxlength="45">
+                <div class="flex mb-4 admin-mobile-column">
+                    <input type="number" id="dialog-product-price" class="border p-2 mr-2 flex-1" placeholder="Preis">
+                    <input type="number" id="dialog-product-quantity" class="border p-2 flex-1" placeholder="Verfügbar">
+                </div>
+                <div class="flex mb-4 admin-mobile-column">
+                    <input list="categories" id="dialog-product-category" class="border p-2 mr-2 flex-1"
+                        placeholder="Kategorie auswählen oder eingeben" maxlength="25">
+                    <datalist id="categories">
+                    </datalist>
+                    <input type="number" id="dialog-product-shipping-cost" class="border p-2 flex-1"
+                        placeholder="Versandkosten">
+                </div>
+                <textarea id="dialog-product-description" class="border p-2 w-full mb-4 h-24"
+                    placeholder="Beschreibung"></textarea>
+                <div class="mb-4">
+                    <label for="dialog-product-image-file" class="btn-tertiary cursor-pointer">
+                        Bilder hochladen (max. 3)
+                    </label>
+                    <input type="file" id="dialog-product-image-file" class="hidden" accept="image/*" multiple>
+                    <div id="image-previews" class="flex flex-wrap gap-4 mt-4"></div>
+                </div>
+
+            </div>
+            <div class="dialog-actions">
+                <button id="dialog-add-product-button" class="btn-primary success mr-2">Erstellen</button>
+                <button id="dialog-cancel-button" class="btn-secondary">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
