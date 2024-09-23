@@ -190,14 +190,11 @@ export const getPromoCodes = async () => {
 export const validateAdminPassword = async (email, password) => {
     const auth = getAuth();
     try {
-        // Versuche, den Benutzer mit der eingegebenen E-Mail und dem Passwort anzumelden
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         
-        // Wenn die Anmeldung erfolgreich war, gib true zurück
         return true;
     } catch (error) {
         console.error('Error validating user credentials:', error);
-        // Wenn der Benutzer nicht existiert oder die Anmeldedaten falsch sind, gib false zurück
         return false;
     }
 };
