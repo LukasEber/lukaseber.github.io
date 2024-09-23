@@ -1,6 +1,7 @@
 import { db, storage } from './firebase.js';
 import { collection, getDocs, getDoc, addDoc, updateDoc, deleteDoc, doc, query, where } from 'https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore.js';  // Importiere notwendige Firestore-Methoden
 import { ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-storage.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js";
 
 export const uploadImage = async (file) => {
     try {
@@ -186,28 +187,18 @@ export const getPromoCodes = async () => {
     }
 };
 
-export const validateAdminPassword = async (username, password) => {
+export const validateAdminPassword = async (email, password) => {
+    const auth = getAuth();
     try {
-        const adminLoginsCollection = collection(db, 'adminlogins');
-        const q = query(adminLoginsCollection, where('user', '==', username));
-        const querySnapshot = await getDocs(q);
-
-        if (!querySnapshot.empty) {
-            const doc = querySnapshot.docs[0];
-            const data = doc.data();
-
-            if (data.key === password) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            console.error('Admin user not found');
-            return false;
-        }
+        // Versuche, den Benutzer mit der eingegebenen E-Mail und dem Passwort anzumelden
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        
+        // Wenn die Anmeldung erfolgreich war, gib true zurück
+        return true;
     } catch (error) {
-        console.error('Error validating admin password:', error);
-        throw error;
+        console.error('Error validating user credentials:', error);
+        // Wenn der Benutzer nicht existiert oder die Anmeldedaten falsch sind, gib false zurück
+        return false;
     }
 };
 
